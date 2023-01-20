@@ -18,6 +18,16 @@ type Character ={
   type:string,
   url:string
 }
+type WhatIsReceived = {
+  info:{
+    count:number,
+    pages:number,
+    next:string,
+    prev:string,
+  },
+  results:Character[]
+}
+
 // const card = document.querySelectorAll<HTMLDivElement>('.character-description');
 const btn = document.querySelectorAll<HTMLButtonElement>('.btn');
 const cardImg = document.querySelectorAll<HTMLImageElement>('.character-image__img');
@@ -27,10 +37,9 @@ const cardSpecies = document.querySelectorAll<HTMLParagraphElement | null>('.cha
 const cardLocation = document.querySelectorAll<HTMLParagraphElement | null>('.character-description--location__place');
 const cardFirstEpisode = document.querySelectorAll<HTMLParagraphElement | null>('.character-description--first-seen__episode');
 const cardStatusColorCircle = document.querySelectorAll<HTMLParagraphElement | null>('.character-description--status-species__color');
-const displayData = (data:any) => {
+const displayData = (data:WhatIsReceived) => {
+  console.log(data);
   const character:Character[] = data.results;
-
-  console.log(character);
   for (let i = 0; i < character.length; i += 1) {
     cardImg[i].src = character[i].image;
     cardName[i].innerHTML = character[i].name;
