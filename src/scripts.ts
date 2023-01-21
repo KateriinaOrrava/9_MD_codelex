@@ -28,7 +28,6 @@ type WhatIsReceived = {
   results:Character[]
 }
 
-// const card = document.querySelectorAll<HTMLDivElement>('.character-description');
 const btn = document.querySelectorAll<HTMLButtonElement>('.btn');
 const cardImg = document.querySelectorAll<HTMLImageElement>('.character-image__img');
 const cardName = document.querySelectorAll<HTMLHeadingElement | null>('.character-description--name');
@@ -38,7 +37,6 @@ const cardLocation = document.querySelectorAll<HTMLParagraphElement | null>('.ch
 const cardFirstEpisode = document.querySelectorAll<HTMLParagraphElement | null>('.character-description--first-seen__episode');
 const cardStatusColorCircle = document.querySelectorAll<HTMLParagraphElement | null>('.character-description--status-species__color');
 const displayData = (data:WhatIsReceived) => {
-  console.log(data);
   const character:Character[] = data.results;
   for (let i = 0; i < character.length; i += 1) {
     cardImg[i].src = character[i].image;
@@ -54,6 +52,7 @@ const displayData = (data:WhatIsReceived) => {
     cardFirstEpisode[i].innerHTML = character[i].origin.name;
   }
 };
+
 let apiLink = 'https://rickandmortyapi.com/api/character/';
 let count = 1;
 const fetchData = () => {
@@ -72,5 +71,4 @@ btn[1].addEventListener('click', () => {
   fetchData();
 });
 
-console.log(count);
 fetchData();

@@ -45,9 +45,13 @@ p.light {
 }
 .character-image{
   order: 2;
+  border-radius: 10px 0px 0px 10px;
 }
 .character-image__img{
   width: 100%;
+  border-radius: 10px 0px 0px 10px;
+}
+img {
   border-radius: 10px 0px 0px 10px;
 }
 .character-description{
